@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Results</title>
+</head>
+<body>
+    <h1>OCR Results</h1>
+
+    <h2>Extracted Text</h2>
+    <p>{{ extracted_text }}</p>
+
+    <h2>Translated Text (Hindi)</h2>
+    <p>{{ translated_text }}</p>
+
+    <h2>Search within the Text</h2>
+    <form action="{{ url_for('search_text') }}" method="POST">
+        <input type="text" name="search_term" placeholder="Enter search term">
+        <input type="hidden" name="extracted_text" value="{{ extracted_text }}">
+        <input type="hidden" name="translated_text" value="{{ translated_text }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Uploaded Image</h2>
+    <img src="{{ uploaded_image }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+
+    <h2>Processed Image</h2>
+    <img src="{{ processed_image }}" alt="Processed Image" style="max-width: 100%; height: auto;">
+
+</body>
+</html>

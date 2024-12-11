@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    <h2>Extracted Text with Highlight</h2>
+    <p>{{ highlighted_extracted_text|safe }}</p>
+
+    <h2>Translated Text with Highlight</h2>
+    <p>{{ highlighted_translated_text|safe }}</p>
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
